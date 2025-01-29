@@ -2,12 +2,14 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=,, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Relogio Digital</title>
+    <title>Relógio Digital</title>
 </head>
 
 <body>
+    <h2 class="titulo-brasilia">Horário de Brasília</h2>
+    
     <div class="relogio">
         <div>
             <span id="horas">00</span>
@@ -25,6 +27,14 @@
         </div>
     </div>
 
+    <!-- Seção para os horários de outros países -->
+    <div class="horarios-mundo">
+        <h3>Horários Mundiais</h3>
+        <p id="nyTime">Nova York: --:--:--</p>
+        <p id="londonTime">Londres: --:--:--</p>
+        <p id="tokyoTime">Tóquio: --:--:--</p>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
-</html>
+

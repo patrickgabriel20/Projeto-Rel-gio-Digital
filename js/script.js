@@ -1,21 +1,39 @@
-const horas = document.getElementById('horas');
-const minutos = document.getElementById('minutos');
-const segundos = document.getElementById('segundos');
+function atualizarRelogio() {
+    var data = new Date();
 
-const relogio = setInterval(function time() {
-    let dateToday = new Date();
-    let hr = dateToday.getHours();
-    let min = dateToday.getMinutes();
-    let s = dateToday.getSeconds();
+    // Pegando o horário local
+    var horas = formatarNumero(data.getHours());
+    var minutos = formatarNumero(data.getMinutes());
+    var segundos = formatarNumero(data.getSeconds());
 
-    if(hr < 10) hr = '0' + hr;
+    // Atualiza o relógio principal
+    document.getElementById('horas').textContent = horas;
+    document.getElementById('minutos').textContent = minutos;
+    document.getElementById('segundos').textContent = segundos;
 
-    if(min < 10) min = '0' + min;
+    // Atualiza os horários de outros países
+    atualizarHorarioMundial();
+}
 
-    if(s < 10) s = '0' + s;
+function atualizarHorarioMundial() {
+    var data = new Date();
 
-    horas.textContent = hr;
-    minutos.textContent = min;
-    segundos.textContent = s
+    // Obtendo horários em diferentes fusos
+    var nyTime = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(data);
+    var londonTime = new Intl.DateTimeFormat('pt-BR', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(data);
+    var tokyoTime = new Intl.DateTimeFormat('pt-BR', { timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(data);
 
-})
+    // Atualiza os elementos HTML
+    document.getElementById('nyTime').textContent = 'Nova York: ' + nyTime;
+    document.getElementById('londonTime').textContent = 'Londres: ' + londonTime;
+    document.getElementById('tokyoTime').textContent = 'Tóquio: ' + tokyoTime;
+}
+
+// Função para formatar números menores que 10 (adiciona zero à esquerda)
+function formatarNumero(numero) {
+    return numero < 10 ? '0' + numero : numero;
+}
+
+// Atualiza os relógios a cada segundo
+setInterval(atualizarRelogio, 1000);
+atualizarRelogio();
