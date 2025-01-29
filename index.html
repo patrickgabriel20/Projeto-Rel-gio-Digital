@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,34 @@
 </head>
 
 <body>
-    <h2 class="titulo-brasilia">Horário de Brasília</h2>
-    
-    <div class="relogio">
-        <div>
-            <span id="horas">00</span>
-            <span class="tempo">Horas</span>
-        </div>
-    
-        <div>
-            <span id="minutos">00</span>
-            <span class="tempo">Minutos</span>
+    <section>
+        <h2 class="titulo-brasilia">Horário de Brasília</h2>
+
+        <div class="relogio">
+            <div>
+                <span id="horas">00</span>
+                <span class="tempo">Horas</span>
+            </div>
+
+            <div>
+                <span id="minutos">00</span>
+                <span class="tempo">Minutos</span>
+            </div>
+
+            <div>
+                <span id="segundos">00</span>
+                <span class="tempo">Segundos</span>
+            </div>
         </div>
 
-        <div>
-            <span id="segundos">00</span>
-            <span class="tempo">Segundos</span>
+        <!-- Seção para os horários de outros países -->
+        <div class="horarios-mundo">
+            <h3>Horários Mundiais</h3>
+            <p id="nyTime">Nova York: --:--:--</p>
+            <p id="londonTime">Londres: --:--:--</p>
+            <p id="tokyoTime">Tóquio: --:--:--</p>
         </div>
-    </div>
 
-    <!-- Seção para os horários de outros países -->
-    <div class="horarios-mundo">
-        <h3>Horários Mundiais</h3>
-        <p id="nyTime">Nova York: --:--:--</p>
-        <p id="londonTime">Londres: --:--:--</p>
-        <p id="tokyoTime">Tóquio: --:--:--</p>
-    </div>
-
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
+    </section>
 </body>
-
